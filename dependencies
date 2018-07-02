@@ -1,61 +1,17 @@
 apply plugin: "com.tal.xes.app.compatplugin" 
 providedAarCompat()
 dependencies {
-    compileOnly fileTree(include: ['*.jar'], dir: 'libs')
-
-    providedAar 'com.android.support:support-v4:26.0.2'
-
-    //rxbinding
-    providedAar 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
-    providedAar 'com.jakewharton.rxbinding2:rxbinding-support-v4:2.0.0'
-    providedAar 'com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:2.0.0'
-   
-    compileOnly ('com.qihoo360.replugin:replugin-plugin-lib:2.2.4'){
-        transitive = false
-    }
-    compileOnly ('com.android.support:appcompat-v7:26.0.2'){
-        transitive = false
-    }
-    compileOnly ('com.android.support:design:26.0.2'){
-        transitive = false
-    }
-
-    providedAar 'com.github.bumptech.glide:glide:3.8.0'
-    providedAar 'jp.wasabeef:glide-transformations:2.0.2'
-
-    //高德地图
-    providedAar 'com.amap.compileOnly:3dmap:5.5.0'
-    providedAar 'com.amap.compileOnly:location:3.5.0'
-    providedAar 'com.github.ybq:Android-SpinKit:1.1.0'
+    providedAar fileTree(include: ['*.jar'], dir: 'libs')
     providedAar 'com.jakewharton:butterknife:8.8.1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-
-
-    providedAar 'com.netease.nimlib:basesdk:5.0.0'
-
-    providedAar 'com.google.code.gson:gson:2.7'
-
-    providedAar 'io.reactivex.rxjava2:rxjava:2.0.7'
-
-    providedAar 'io.reactivex.rxjava2:rxandroid:2.0.1'
-
-    providedAar 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.3@aar'
-    
-    providedAar 'com.squareup.retrofit2:retrofit:2.2.0'
-    providedAar 'com.squareup.retrofit2:converter-gson:2.2.0'
-    providedAar 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'
-    providedAar 'com.squareup.okhttp3:okhttp:3.6.0'
-    providedAar 'com.squareup.okhttp3:logging-interceptor:3.6.0'
-    providedAar 'com.github.bumptech.glide:glide:3.8.0'
-    providedAar 'com.github.bumptech.glide:okhttp3-integration:1.4.0@aar'
-
-
-
-    //私有库
+    annotationProcessor "com.jakewharton:butterknife-compiler:8.8.1"
+    providedAar 'com.android.support:appcompat-v7:26.0.2'
     providedAar 'com.tal.xes.app:common:0.1.0'
-    compileOnly ('com.tal.xes.app:commonresource:0.1.0'){
-        transitive = false
-    }
     providedAar 'com.tal.xes.app:network:0.1.0'
+    implementation 'com.tal.xes.app:commonresource:0.1.0'
     providedAar 'com.tal.xes.app:usercenter:0.1.0'
+    providedAar 'com.android.support:design:26.0.2'
+    providedAar 'com.hyman:flowlayout-lib:1.1.2'
+    providedAar 'com.android.support:cardview-v7:26.0.2'
+    providedAar 'com.android.support:multidex:1.0.1'
+    implementation 'com.qihoo360.replugin:replugin-plugin-lib:2.2.4'
 }

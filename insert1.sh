@@ -10,6 +10,7 @@ do
         sed -i '' "s/api/compileOnly/" $tempCompile
         sed -i '' "s/implementation/compileOnly/" $tempCompile
         insertCompile=`cat $tempCompile`
-        sed -i '' "s/$line/$insertCompile/" lishaowei
+        sed -i '' "s/$line/$insertCompile/" dependencies
     fi
-done <lishaowei
+done <dependencies
+rm -rf $tempCompile
