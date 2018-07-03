@@ -4,14 +4,20 @@ dependencies {
     providedAar fileTree(include: ['*.jar'], dir: 'libs')
     providedAar 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor "com.jakewharton:butterknife-compiler:8.8.1"
-    providedAar 'com.android.support:appcompat-v7:26.0.2'
-    providedAar 'com.tal.xes.app:common:0.1.0'
-    providedAar 'com.tal.xes.app:network:0.1.0'
-    implementation 'com.tal.xes.app:commonresource:0.1.0'
-    providedAar 'com.tal.xes.app:usercenter:0.1.0'
-    providedAar 'com.android.support:design:26.0.2'
+    providedAar 'com.tal.xes.app:common:0.2.1'
+    providedAar 'com.tal.xes.app:network:0.2.1'
+    providedAar 'com.tal.xes.app:usercenter:0.2.1'
     providedAar 'com.hyman:flowlayout-lib:1.1.2'
     providedAar 'com.android.support:cardview-v7:26.0.2'
     providedAar 'com.android.support:multidex:1.0.1'
-    implementation 'com.qihoo360.replugin:replugin-plugin-lib:2.2.4'
+    implementation ('com.tal.xes.app:commonresource:0.2.1'){
+        transitive = false
+    }
+    implementation ('com.android.support:appcompat-v7:26.0.2')
+    implementation ('com.android.support:design:26.0.2'){
+        transitive = false
+    }
+    implementation ('com.qihoo360.replugin:replugin-plugin-lib:2.2.4'){
+        transitive = false
+    }
 }
