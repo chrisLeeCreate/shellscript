@@ -13,11 +13,7 @@ dependencies {
     implementation ('com.tal.xes.app:commonresource:0.2.1'){
         transitive = false
     }
-    implementation ('com.android.support:appcompat-v7:26.0.2')
-    implementation ('com.android.support:design:26.0.2'){
-        transitive = false
-    }
-    implementation ('com.qihoo360.replugin:replugin-plugin-lib:2.2.4'){
-        transitive = false
-    }
+    implementation 'com.android.support:appcompat-v7:26.0.2'
+    implementation 'com.android.support:design:26.0.2'
+    implementation 'com.qihoo360.replugin:replugin-plugin-lib:2.2.4'
 }
