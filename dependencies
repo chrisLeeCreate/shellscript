@@ -1,19 +1,20 @@
 apply plugin: "com.tal.xes.app.compatplugin" 
 providedAarCompat()
 dependencies {
-    providedAar fileTree(include: ['*.jar'], dir: 'libs')
+  providedAar fileTree(include: ['*.jar'], dir: 'libs')
     providedAar 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor "com.jakewharton:butterknife-compiler:8.8.1"
-    providedAar 'com.tal.xes.app:common:0.2.1'
-    providedAar 'com.tal.xes.app:network:0.2.1'
-    providedAar 'com.tal.xes.app:usercenter:0.2.1'
+    providedAar 'com.tal.xes.app:common:0.2.4'
+    providedAar 'com.tal.xes.app:network:0.2.5'
+    providedAar 'com.tal.xes.app:usercenter:0.2.7'
     providedAar 'com.hyman:flowlayout-lib:1.1.2'
     providedAar 'com.android.support:cardview-v7:26.0.2'
     providedAar 'com.android.support:multidex:1.0.1'
-    implementation ('com.tal.xes.app:commonresource:0.2.1'){
-        transitive = false
+    implementation ('com.tal.xes.app:commonresource:0.2.5'){
+          transitive = false
     }
     implementation 'com.android.support:appcompat-v7:26.0.2'
     implementation 'com.android.support:design:26.0.2'
     implementation 'com.qihoo360.replugin:replugin-plugin-lib:2.2.4'
+    implementation 'com.sensorsdata.analytics.android:SensorsAnalyticsSDK:1.10.6' 
 }
