@@ -17,4 +17,5 @@ dependencies {
     implementation 'com.android.support:design:26.0.2'
     implementation 'com.qihoo360.replugin:replugin-plugin-lib:2.2.4'
     implementation 'com.sensorsdata.analytics.android:SensorsAnalyticsSDK:1.10.6' 
+    implementation 'org.greenrobot:eventbus:3.0.0'
 }
