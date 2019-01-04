@@ -1,0 +1,11 @@
+#!/usr/bin/expect -f
+  set user xesapp
+  set host 10.4.9.119
+  set password xesapp@2018
+  set timeout -1
+
+  spawn ssh $user@$host
+  expect "*assword:*"
+  send "$password\r"
+  interact
+  expect eof

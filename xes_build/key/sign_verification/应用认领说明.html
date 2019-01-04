@@ -1,0 +1,186 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #737373;
+    margin: 10px 13px 10px 13px;
+}
+a {
+    color: #0069d6;
+}
+a:hover {
+    color: #0050a3;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+p {
+    margin-bottom: 9px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #404040;
+    line-height: 36px;
+}
+h1 {
+    margin-bottom: 18px;
+    font-size: 30px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 13px;
+}
+hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+blockquote {
+    padding: 13px 13px 21px 15px;
+    margin-bottom: 18px;
+    font-family:georgia,serif;
+    font-style: italic;
+}
+blockquote:before {
+    content:"\201C";
+    font-size:40px;
+    margin-left:-10px;
+    font-family:georgia,serif;
+    color:#eee;
+}
+blockquote p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+code, pre {
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+}
+code {
+    background-color: #fee9cc;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+    line-height: 16px;
+    font-size: 11px;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    background-color: #fff;
+    color:#737373;
+    font-size: 11px;
+    padding: 0;
+}
+@media screen and (min-width: 768px) {
+    body {
+        width: 748px;
+        margin:10px auto;
+    }
+}
+</style>
+<title>开发者应用认领说明</title>
+</head>
+<body>
+<h1>开发者应用认领说明</h1>
+
+<p>Flyme应用中心应用认领，采用Android的apk安装包签名机制来完成。如果你不清楚签名是什么，请联系开发人员协助您。</p>
+
+<p>在Android平台发布应用程序之前，必须经过一个签名流程。现在您的密钥就是您的身份证明，您所要做的就是使用您的密钥，将我们提供给您的一款未经过签名的apk包签名后，发送给我们。</p>
+
+<h2>jarsigner简单使用说明</h2>
+
+<pre><code>jarsigner -verbose -keystore ~/Workspace/mykeystore -signedjar ./meizuemptyapk-release-signed.apk ./meizuemptyapk-release-unsigned.apk meizu
+</code></pre>
+
+<p>给apk包签名的方式有很多种，我们推荐您使用JDK自带的jarsigner工具来完成签名。jarsigner工具的命令格式是：</p>
+
+<pre><code># jarsigner的命令格式
+
+jarsigner -verbose -keystore [您的私钥存放路径] -signedjar [签名后文件存放路径] [未签名的文件路径] [您的证书名称]
+
+#jarsigner的参数说明
+
+-keystore 参数指定您的私钥的绝对路径，例如：c:\mykeystore
+-signedjar 参数指定签名后apk文件存放绝对的路径，例如 c:\signed.apk
+[未签名的文件路径] 指定要签名apk文件的绝对路径，也就是您从我们这里下载到的，例如 c:\meizuemptyapk-release-unsigned.apk
+[您的证书名称] 是指您创建密钥时，您设置的证书名称
+</code></pre>
+
+<h2>Linux和Mac OS X平台的签名方法：</h2>
+
+<ol>
+<li>打开 <code>Terminal</code> 程序</li>
+<li>进入从魅族开放平台下载到的sign_verification.zip解压后的目录，例如<code>cd ~/Downloads/sign_verification</code></li>
+<li>使用jarsigner签名</li>
+</ol>
+
+
+<p>命令举例示例：</p>
+
+<pre><code>jarsigner -verbose -keystore ~/Workspace/mykeystore -signedjar ./meizuemptyapk-release-signed.apk ./meizuemptyapk-release-unsigned.apk meizu
+</code></pre>
+
+<p>这样就完成了，将签名后的包上传到魅族开放平台应用认领签名验证页面.</p>
+
+<h2>Windows平台签名方法：</h2>
+
+<ol>
+<li>打开 <code>命令提示符</code> 程序</li>
+<li>进入从魅族开放平台下载到的sign_verification解压后的目录，例如<code>cd C:\Downloads\sign_verification</code></li>
+<li>使用jarsigner签名</li>
+</ol>
+
+
+<p>命令举例示例：</p>
+
+<pre><code>jarsigner -verbose -keystore C:\Downloads\sign_verification\mykeystore -signedjar meizuemptyapk-release-signed.apk meizuemptyapk-release-unsigned.apk meizu
+</code></pre>
+
+<p>这样就完成了，将签名后的包上传到魅族开放平台应用认领签名验证页面.</p>
+
+</body>
+</html>

@@ -1,21 +1,27 @@
-apply plugin: "com.tal.xes.app.compatplugin" 
+apply plugin: "com.tal.xes.app.compatplugin"
 providedAarCompat()
 dependencies {
-  providedAar fileTree(include: ['*.jar'], dir: 'libs')
-    providedAar 'com.jakewharton:butterknife:8.8.1'
-    annotationProcessor "com.jakewharton:butterknife-compiler:8.8.1"
-    providedAar 'com.tal.xes.app:common:0.2.4'
-    providedAar 'com.tal.xes.app:network:0.2.5'
-    providedAar 'com.tal.xes.app:usercenter:0.2.7'
-    providedAar 'com.hyman:flowlayout-lib:1.1.2'
-    providedAar 'com.android.support:cardview-v7:26.0.2'
-    providedAar 'com.android.support:multidex:1.0.1'
-    implementation ('com.tal.xes.app:commonresource:0.2.5'){
-          transitive = false
-    }
-    implementation 'com.android.support:appcompat-v7:26.0.2'
-    implementation 'com.android.support:design:26.0.2'
-    implementation 'com.qihoo360.replugin:replugin-plugin-lib:2.2.4'
-    implementation 'com.sensorsdata.analytics.android:SensorsAnalyticsSDK:1.10.6' 
-    implementation 'org.greenrobot:eventbus:3.0.0'
-}
+  implementation 'com.qihoo360.replugin:replugin-plugin-lib:2.2.4'
+  providedAar 'io.reactivex.rxjava2:rxjava:2.0.7'
+  providedAar 'io.reactivex.rxjava2:rxandroid:2.0.1'
+  providedAar 'com.google.code.gson:gson:2.7'
+ 
+  providedAar 'com.squareup.retrofit2:retrofit:2.2.0'
+  providedAar 'com.squareup.retrofit2:converter-gson:2.2.0'
+  providedAar 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'
+  providedAar 'com.squareup.okhttp3:okhttp:3.6.0'
+ 
+  providedAar 'com.github.bumptech.glide:glide:3.8.0'
+  providedAar 'jp.wasabeef:glide-transformations:2.0.2'
+  providedAar 'com.github.bumptech.glide:okhttp3-integration:1.4.0@aar'
+ 
+ 
+  providedAar 'com.tal.xes.app:common:0.5.1' //工具库
+  implementation 'com.tal.xes.app:commonresource:0.5.1' //资源库
+  providedAar 'com.tal.xes.app:network:0.5.1' //网络库
+  providedAar 'com.tal.xes.app:usercenter:0.5.1' //用户中心
+  implementation 'com.tal.xes.app:xesplayer:0.3.3' //媒体
+  providedAar 'com.tal.xes.app:trackerSDK:0.0.3'
+ 
+  providedAar 'com.sensorsdata.analytics.android:SensorsAnalyticsSDK:1.10.6'
+ }

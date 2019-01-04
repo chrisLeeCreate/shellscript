@@ -1,4 +1,4 @@
-while read line 
+while read line
 do
     if [[ $line =~ commonresource ]]
     then
